@@ -1,0 +1,23 @@
+---
+import EmptyStar from "./icons/EmptyStar.astro";
+import Star from "./icons/Star.astro";
+
+const { name, stars, comment } = Astro.props;
+---
+
+<article class="flex flex-col w-full max-w-[300px] bg-white min-h-36 justify-center items-start rounded-sm p-3 gap-1 shadow-xl hover:-translate-y-1 transition-transform duration-300 cursor-pointer">
+    <h3 class="text-xl font-medium">- {name} -</h3>
+    <div class="flex mb-1">
+        {
+            Array.from({length: stars}).map(() => (
+                <Star class="fill-yellow-400"/>
+            ))
+        }
+        {
+            Array.from({length: 5 - stars}).map(() => (
+                <EmptyStar class="stroke-yellow-400" />
+            ))
+        }
+    </div>
+    <p class="italic">"{comment}"</p>
+</article>

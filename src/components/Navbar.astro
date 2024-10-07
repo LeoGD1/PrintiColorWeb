@@ -1,0 +1,41 @@
+---
+import Linknav from '../components/Linknav.astro';
+---
+<nav class="w-full h-16 bg-red-500 relative z-50">
+    <div class="max-w-[950px] h-full mx-auto flex px-8 justify-between items-center sm:px-12">
+        <img src="/assets/Logo_blanco.png" alt="Logo printicolor" class="relative h-9 z-50"/>
+        <div class="relative z-50 w-11 h-11 p-2 flex flex-col justify-center items-center gap-1 cursor-pointer sm:hidden" id="navMenuIcon">
+            <span class="bg-white w-full h-1 rounded-sm"></span>
+            <span class="bg-white w-full h-1 rounded-sm"></span>
+            <span class="bg-white w-full h-1 rounded-sm"></span>
+        </div>
+        <ul class="opacity-0 list-none text-white fixed bg-red-500 top-0 left-0 w-[100%] h-[100vh] px-5 py-10 flex flex-col justify-center items-center gap-10 pointer-events-none transition-opacity ease-in-out duration-250 sm:static sm:opacity-100 sm:bg-transparent sm:flex-row sm:px-0 sm:py-0 sm:justify-end sm:gap-5 sm:h-[auto] sm:w-[auto] sm:pointer-events-auto" id="menuList">
+            <Linknav link="/">
+                Inicio
+            </Linknav>
+            <Linknav link="/portafolio">
+                Portafolio
+            </Linknav>
+            <Linknav link="/contacto">
+                Contacto
+            </Linknav>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navMenuIcon = document.getElementById('navMenuIcon'); 
+        const menu = document.getElementById('menuList');
+
+        if (navMenuIcon) { 
+            navMenuIcon.addEventListener('click', () => {
+                if (menu) { 
+                    menu.classList.toggle('overflow-hidden');
+                    menu.classList.toggle('opacity-0');
+                    menu.classList.toggle('pointer-events-none');
+                }
+            });
+        }
+    });
+</script>

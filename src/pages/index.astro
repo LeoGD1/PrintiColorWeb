@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Maxwidth from '../layouts/Maxwidth.astro';
+import Service from '../components/Service.astro';
+import Work from '../components/Work.astro';
+import Comments from '../components/Comments.astro';
+
+const PROJECTS = [
+    {
+        img: '/assets/uno.jpg',
+        serv: 'Señalética'
+    },
+	{
+        img: '/assets/dos.jpg',
+        serv: 'Sublimación'
+    },
+	{
+        img: '/assets/tres.jpg',
+        serv: 'Serigrafía'
+    },
+	{
+        img: '/assets/cuatro.jpg',
+        serv: 'Sublimación'
+    },
+	{
+        img: '/assets/cinco.jpg',
+        serv: 'Serigrafía'
+    },
+	{
+        img: '/assets/seis.jpg',
+        serv: 'Serigrafía'
+    }
+];
+---
+<Layout title="Printi Color - Señalética y Serigrafía.">
+	<main class="bg-[linear-gradient(rgba(255,0,0,0.7),rgba(255,0,0,0.7)),url('/assets/img1.jpg')] h-[400px] bg-fixed bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-white text-center sm:h-[500px] px-3">
+		<h1 class="text-[55px] font-bold sm:text-[70px]">Printi Color</h1>
+		<p class="text-2xl font-normal sm:text-[27px]">Soluciones digitales</p>
+		<a href="/contacto" class="px-6 py-2 border border-white hover:text-black hover:bg-white mt-10 duration-200 sm:px-7 sm:py-3 ">Contactar</a>
+	</main>
+
+	<section class="min-h-[200px] px-3 py-20">
+		<Maxwidth>
+			<h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">¿Qué hacemos?</h2>
+			<div class="w-full flex flex-col gap-5 md:flex-row">
+				<picture class="w-full flex justify-center items-center">
+					<img src="/assets/rasero.png" alt="rasero de impresión" class="w-[80%] max-w-[350px] md:w-[100%]">
+				</picture>
+				<div class="w-[100%] px-4">
+					<Service
+						numberService='1'
+						nameService='Serigrafía'
+						description='La serigrafía se puede aplicar en diversas superficies, como camisetas, vasos, tazas y bolsas, garantizando personalización y calidad.'
+					/>
+					<Service 
+						numberService='2'
+						nameService='Sublimación'
+						description='Este tipo de estampado se puede realizar en camisetas, tazas y gorras, ofreciendo personalización duradera.'
+					/>
+					<Service 
+						numberService='3'
+						nameService='Señalética'
+						description='Ofrecemos la venta de señalamientos personalizados, adaptados a las necesidades de negocios pequeños y empresas, asegurando visibilidad y cumplimiento normativo.'
+					/>
+				</div>
+			</div>
+		</Maxwidth>
+	</section>
+
+	<section class="bg-[#ececec] min-h-[200px] px-3 py-20">
+		<Maxwidth>
+			<h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Nuestro trabajo</h2>
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center">
+				{
+					PROJECTS.map(project => (
+						<Work
+							image={project.img}
+							service={project.serv}
+						/>
+					))
+				}
+			</div>
+		</Maxwidth>
+	</section>
+
+	<section class="min-h-[200px] px-3 py-20">
+		<Maxwidth>
+			<h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Opiniones</h2>
+			<Comments />
+		</Maxwidth>
+	</section>
+</Layout>

@@ -1,0 +1,41 @@
+---
+import Maxwidth from "../layouts/Maxwidth.astro";
+import Linknav from "./Linknav.astro";
+---
+<footer class="bg-[#1b1919] w-full min-h-[200px] px-3 py-20">
+    <Maxwidth>
+        <div class="flex text-white flex-wrap gap-5">
+            <div class="max-w-[200px] w-full mb-5">
+                <h3 class="font-medium text-xl opacity-25">Printi Color</h3>
+                <ul class="list-none mt-2 flex flex-col pl-4">
+                    <li>
+                        <a href="/" class="opacity-25 hover:opacity-75 transition-opacity duration-300">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/portafolio" class="opacity-25 hover:opacity-75 transition-opacity duration-300">Portafolio</a>
+                    </li>
+                    <li>
+                        <a href="/contacto" class="opacity-25 hover:opacity-75 transition-opacity duration-300">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="max-w-[200px] w-full mb-5">
+                <h3 class="font-medium text-xl opacity-25">Redes sociales</h3>
+                <ul class="list-none mt-2 flex flex-col pl-4">
+                    <li>
+                        <a href="#linkFacebook" class="opacity-25 hover:opacity-75 transition-opacity duration-300">Facebook</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="max-w-[200px] w-full mb-5">
+                <h3 class="font-medium text-xl opacity-25">Teléfonos</h3>
+                <ul class="list-none mt-2 flex flex-col pl-4">
+                    <li class="opacity-25 hover:opacity-75 transition-opacity duration-300">+52 729 168 7966</li>
+                    <li class="opacity-25 hover:opacity-75 transition-opacity duration-300">+52 722 778 5391</li>
+
+                </ul>
+            </div>
+        </div>
+
+    </Maxwidth>
+</footer>

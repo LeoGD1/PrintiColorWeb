@@ -1,0 +1,9 @@
+---
+const { link } = Astro.props;
+---
+
+<li class="w-auto text-center">
+    <a class="text-4xl font-normal relative sm:underline-offset-0 sm:text-[18px] cursor pointer sm:z-50" href={link}>
+        <slot />
+    </a>
+</li>

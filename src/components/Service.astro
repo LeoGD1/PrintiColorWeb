@@ -1,0 +1,17 @@
+---
+interface Props {
+    numberService: string;
+    nameService: string;
+    description: string;
+}
+
+const { numberService, nameService, description } = Astro.props;
+---
+
+<>
+    <h3 class="font-medium flex gap-2 items-center text-lg">
+        <span class="w-7 h-7 bg-red-500 rounded-full flex justify-center items-center text-white text-base mb-1">{numberService}</span>
+        {nameService}
+    </h3>
+    <p class="pl-9 mb-5 text-[17px]">{description}</p>
+</>

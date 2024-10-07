@@ -1,0 +1,10 @@
+---
+const  { image, service } = Astro.props;
+---
+
+<article class="group overflow-hidden relative">
+    <div class="absolute bg-red-500/50 h-full w-full bottom-[-100%] grid place-items-center group-hover:bottom-0 cursor-pointer transition-all ease-out duration-200">
+        <p class="text-4xl font-medium text-white">{service}</p>
+    </div>
+    <img src={image} alt={`Printi Color servicio de ${service}`} class="h-full max-w-[350px] w-full object-cover ">
+</article>

@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Maxwidth from "../layouts/Maxwidth.astro";
+import Form from "../components/Form.astro";
+---
+
+<Layout title="Printi Color - Contáctanos pára más información">
+    <main class="bg-[linear-gradient(rgba(255,0,0,0.7),rgba(255,0,0,0.7)),url('/assets/img2.jpg')] h-[300px] bg-fixed bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-white text-center sm:h-[500px] px-3">
+		<h2 class="text-[40px] font-medium sm:text-[55px]">¡Contáctanos!</h2>
+		<p class="text-2xl font-light sm:text-[27px]">Envía un mensaje a nuestro correo.</p>
+	</main>
+    <section class="min-h-[200px] px-3 py-20">
+        <Maxwidth>
+            <h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Contáctanos</h2>
+            <p class="text-center">Para solicitar algún servicio de serigrafía, sublimación o señalética, o bien para contactarnos, puedes envíar correo a <span class="font-medium">printi.color75@hotmail.com</span> o completar el siguiente formulario</p>
+            <Form />
+        </Maxwidth>
+    </section>
+</Layout>

@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Maxwidth from "../layouts/Maxwidth.astro";
+import Work from "../components/Work.astro";
+
+const WORKS = [
+    {
+        image: '/assets/ser_1.jpg',
+        service: 'Serigrafía',
+    },
+    {
+        image: '/assets/sub_1.jpg',
+        service: 'Sublimación',
+    },
+    {
+        image: '/assets/ser_2.jpg',
+        service: 'Serigrafía',
+    },
+    {
+        image: '/assets/sub_2.jpg',
+        service: 'Sublimación',
+    },
+    {
+        image: '/assets/ser_3.jpg',
+        service: 'Serigrafía',
+    },
+    {
+        image: '/assets/ser_4.jpg',
+        service: 'Serigrafía',
+    },
+    {
+        image: '/assets/uno.jpg',
+        service: 'Serigrafía',
+    },
+    {
+        image: '/assets/dos.jpg',
+        service: 'Sublimación',
+    },
+    {
+        image: '/assets/tres.jpg',
+        service: 'Serigrafía',
+    },
+];
+
+---
+
+<Layout title="Printi Color - Nuestro trabajo">
+    <main class="bg-[linear-gradient(rgba(255,0,0,0.7),rgba(255,0,0,0.7)),url('/assets/img2.jpg')] h-[300px] bg-fixed bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-white text-center sm:h-[500px] px-3">
+		<h1 class="text-[40px] font-medium sm:text-[55px]">Ruben González Acosta</h1>
+		<p class="text-2xl font-light sm:text-[27px]">Soluciones digitales</p>
+	</main>
+    <section class="min-h-[200px] px-3 py-20">
+        <Maxwidth>
+            <h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Nosotros</h2>
+            <div class="w-full flex flex-col gap-5 md:flex-row">
+                <picture class="w-full flex justify-center items-center">
+                    <img src="/assets/logo_color.png" alt="Logo Printi Color" class="w-[90%] max-w-[350px] md:w-[100%]">
+                </picture>
+                <div class="w-[100%] px-4 flex flex-col gap-2 justify-center">
+                    <p>Somos un negocio con más de 20 años de experiencia dedicado a la impresión en serigrafía de:</p>
+                    <ul class="list-disc ml-8">
+                        <li class="marker:text-red-500">Articulos promocionales.</li>
+                        <li class="marker:text-red-500">Señalamientos bajo las normas de Protección Civil y más.</li>
+                    </ul>
+                    <p>De igual manera realizamos sublimación en superficies como lo son gorras, tazas, playeras y demás artículos.</p>
+                    <ul class="list-disc ml-8">
+                        <li class="marker:text-red-500">Tazas.</li>
+                        <li class="marker:text-red-500">Playeras.</li>
+                        <li class="marker:text-red-500">Gorras y más</li>
+                    </ul>
+                </div>
+            </div>
+        </Maxwidth>
+    </section>
+    <section class="min-h-[200px] px-3 py-20 bg-[#ececec]">
+        <Maxwidth>
+            <h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Ubicación</h2>
+            <div class="w-full flex flex-col gap-5 md:flex-row-reverse">
+                <picture class="w-full flex justify-center items-center">
+                    <img src="/assets/local.jpg" alt="Logo Printi Color" class="w-[80%] max-w-[350px] md:w-[100%]">
+                </picture>
+                <div class="w-[100%] px-4 flex flex-col gap-2 justify-center">
+                    <p>Actualmente estamos ubicados en Toluca, Estado de México, colonia Santa Ana Tlapaltitlan sobre la calle Miguel Hidalgo, 20 metros despúes de la Calle Morelos.</p>
+                    <p>Para cualquier servicio estamos disponibles en dicha ubicación, o en su caso comunicarse al número <span class="font-medium">+52 729 168 7966</span>. Contamos con entregas en Toluca, centro o en algun lugar pactado.</p>
+                </div>
+            </div>
+        </Maxwidth>
+    </section>
+    <section class="min-h-[200px] px-3 py-20">
+        <Maxwidth>
+            <h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Portafolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 place-items-center">
+                {
+                    WORKS.map(( {image, service} ) => (
+                    <Work
+							image={image}
+							service={service}
+						/>
+                    ))
+                }
+            </div>
+        </Maxwidth>
+    </section>
+    <section class="min-h-[200px] px-3 py-20 bg-[#ececec]">
+        <Maxwidth>
+            <h2 class="text-[30px] text-center font-medium mb-6 sm:mb-10">Herramientas</h2>
+            <div class="text-center flex w-full justify-center gap-10 text-[18px] flex-wrap xs:gap-10">
+                <div>
+                    <img src="/assets/corel.png" alt="corel draw" class="rounded-full size-28">
+                    <p class="mt-3">Corel Draw</p>
+                </div>
+                <div>
+                    <img src="/assets/photoshop.png" alt="icono photoshop" class="rounded-full size-28">
+                    <p class="mt-3">Photoshop</p>
+                </div>
+                <div>
+                    <img src="/assets/illustrator.png" alt="icono illustrator" class="rounded-full size-28">
+                    <p class="mt-3">Illustrator</p>
+                </div>
+            </div>
+        </Maxwidth>
+    </section>
+</Layout>
